@@ -1,1 +1,1 @@
-# VRick_Glove_NASA-TLX
+# NASA-TLX
