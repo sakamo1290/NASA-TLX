@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="main.css">
+	<script src="NASA-TLX.js"></script>
+	<title>NASA-TLXアンケート</title>
+</head>
+<body>
+	<div id="div1" style>
+		<h1>タスクアンケート</h1>
+		タスクの経験に最も近い各スケール上のポイントをクリックしてください。
+		<br>
+		<table style="width: 30cm;">
+			<tr style="height: 4cm;">
+				<td style="width: 12cm;">
+					<table>
+						<tr><th colspan="2">精神的な要求</th></tr>
+						<tr><td colspan="2" style="text-align: center;">
+							<input type="range" min="0" max="100" list="tlist1" id="mental">
+							<datalist id="tlist1">
+								<option value="0"></option>
+								<option value="5"></option>
+								<option value="10"></option>
+								<option value="15"></option>
+								<option value="20"></option>
+								<option value="25"></option>
+								<option value="30"></option>
+								<option value="35"></option>
+								<option value="40"></option>
+								<option value="45"></option>
+								<option value="50"></option>
+								<option value="55"></option>
+								<option value="60"></option>
+								<option value="65"></option>
+								<option value="70"></option>
+								<option value="75"></option>
+								<option value="80"></option>
+								<option value="85"></option>
+								<option value="90"></option>
+								<option value="95"></option>
+								<option value="100"></option>
+							</datalist>
+						</td></tr>
+						<tr><td style="text-align: left;">小さい</td><td style="text-align: right;">大きい</td></tr>
+					</table>
+				</td>
+				<td>
+					どの程度の知的・知覚的活動(考える、決める、計算する、記憶する、見るなど)を必要としましたか。<br>課題はやさしかったですか。それとも難しかったですか。<br>単純でしたか。それとも複雑でしたか。<br>正確さが求められましたか。それとも大ざっぱでよかったですか。
+				</td>
+			</tr>
+
+			<tr style="height: 4cm;">
+				<td style="width: 12cm;">
+					<table>
+						<tr><th colspan="2">身体的な要求</th></tr>
+						<tr><td colspan="2" style="text-align: center;">
+							<input type="range" min="0" max="100" list="tlist2" id="physical">
+							<datalist id="tlist2">
+								<option value="0"></option>
+								<option value="5"></option>
+								<option value="10"></option>
+								<option value="15"></option>
+								<option value="20"></option>
+								<option value="25"></option>
+								<option value="30"></option>
+								<option value="35"></option>
+								<option value="40"></option>
+								<option value="45"></option>
+								<option value="50"></option>
+								<option value="55"></option>
+								<option value="60"></option>
+								<option value="65"></option>
+								<option value="70"></option>
+								<option value="75"></option>
+								<option value="80"></option>
+								<option value="85"></option>
+								<option value="90"></option>
+								<option value="95"></option>
+								<option value="100"></option>
+							</datalist>
+						</td></tr>
+						<tr><td style="text-align: left;">小さい</td><td style="text-align: right;">大きい</td></tr>
+					</table>
+				</td>
+				<td>
+					どの程度の身体的活動(押す、引く、回す、制御する、動き回るなど)を必要としましたか。<br>作業はラクでしたか。それともキツかったですか。<br>ゆっくりできましたか。それともキビキビやらなければなりませんでしたか。<br>休み休みできましたか。それとも働きづめでしたか。
+				</td>
+			</tr>
+
+			<tr style="height: 4cm;">
+				<td style="width: 12cm;">
+					<table>
+						<tr><th colspan="2">時間的なプレッシャー</th></tr>
+						<tr><td colspan="2" style="text-align: center;">
+							<input type="range" min="0" max="100" list="tlist3" id="temporal">
+							<datalist id="tlist3">
+								<option value="0"></option>
+								<option value="5"></option>
+								<option value="10"></option>
+								<option value="15"></option>
+								<option value="20"></option>
+								<option value="25"></option>
+								<option value="30"></option>
+								<option value="35"></option>
+								<option value="40"></option>
+								<option value="45"></option>
+								<option value="50"></option>
+								<option value="55"></option>
+								<option value="60"></option>
+								<option value="65"></option>
+								<option value="70"></option>
+								<option value="75"></option>
+								<option value="80"></option>
+								<option value="85"></option>
+								<option value="90"></option>
+								<option value="95"></option>
+								<option value="100"></option>
+							</datalist>
+						</td></tr>
+						<tr><td style="text-align: left;">弱い</td><td style="text-align: right;">強い</td></tr>
+					</table>
+				</td>
+				<td>
+					仕事のペースや課題が発生する頻度のために感じる時間的切迫感はどの程度でしたか。<br>ペースはゆっくりとして余裕があるものでしたか。それとも速くて余裕のないものでしたか。
+				</td>
+			</tr>
+
+			<tr style="height: 4cm;">
+				<td style="width: 12cm;">
+					<table>
+						<tr><th colspan="2">成績</th></tr>
+						<tr><td colspan="2" style="text-align: center;">
+							<input type="range" min="0" max="100" list="tlist4" id="performance">
+							<datalist id="tlist4">
+								<option value="0"></option>
+								<option value="5"></option>
+								<option value="10"></option>
+								<option value="15"></option>
+								<option value="20"></option>
+								<option value="25"></option>
+								<option value="30"></option>
+								<option value="35"></option>
+								<option value="40"></option>
+								<option value="45"></option>
+								<option value="50"></option>
+								<option value="55"></option>
+								<option value="60"></option>
+								<option value="65"></option>
+								<option value="70"></option>
+								<option value="75"></option>
+								<option value="80"></option>
+								<option value="85"></option>
+								<option value="90"></option>
+								<option value="95"></option>
+								<option value="100"></option>
+							</datalist>
+						</td></tr>
+						<tr><td style="text-align: left;">良い</td><td style="text-align: right;">悪い</td></tr>
+					</table>
+				</td>
+				<td>
+					作業指示者によって設定された課題の目標をどの程度達成できたと思いますか。<br>目標の達成に関して自分の作業成績にどの程度満足していますか。
+				</td>
+			</tr>
+
+			<tr style="height: 4cm;">
+				<td style="width: 12cm;">
+					<table>
+						<tr><th colspan="2">努力</th></tr>
+						<tr><td colspan="2" style="text-align: center;">
+							<input type="range" min="0" max="100" list="tlist5" id="effort">
+							<datalist id="tlist5">
+								<option value="0"></option>
+								<option value="5"></option>
+								<option value="10"></option>
+								<option value="15"></option>
+								<option value="20"></option>
+								<option value="25"></option>
+								<option value="30"></option>
+								<option value="35"></option>
+								<option value="40"></option>
+								<option value="45"></option>
+								<option value="50"></option>
+								<option value="55"></option>
+								<option value="60"></option>
+								<option value="65"></option>
+								<option value="70"></option>
+								<option value="75"></option>
+								<option value="80"></option>
+								<option value="85"></option>
+								<option value="90"></option>
+								<option value="95"></option>
+								<option value="100"></option>
+							</datalist>
+						</td></tr>
+						<tr><td style="text-align: left;">少ない</td><td style="text-align: right;">多い</td></tr>
+					</table>
+				</td>
+				<td>
+					作業成績のレベルを達成・維持するために、精神的・身体的にどの程度一生懸命に作業しなければなりませんでしたか。
+				</td>
+			</tr>
+
+			<tr style="height: 4cm;">
+				<td style="width: 12cm;">
+					<table>
+						<tr><th colspan="2">不満</th></tr>
+						<tr><td colspan="2" style="text-align: center;">
+							<input type="range" min="0" max="100" list="tlist6" id="frustration">
+							<datalist id="tlist6">
+								<option value="0"></option>
+								<option value="5"></option>
+								<option value="10"></option>
+								<option value="15"></option>
+								<option value="20"></option>
+								<option value="25"></option>
+								<option value="30"></option>
+								<option value="35"></option>
+								<option value="40"></option>
+								<option value="45"></option>
+								<option value="50"></option>
+								<option value="55"></option>
+								<option value="60"></option>
+								<option value="65"></option>
+								<option value="70"></option>
+								<option value="75"></option>
+								<option value="80"></option>
+								<option value="85"></option>
+								<option value="90"></option>
+								<option value="95"></option>
+								<option value="100"></option>
+							</datalist>
+						</td></tr>
+						<tr><td style="text-align: left;">低い</td><td style="text-align: right;">高い</td></tr>
+					</table>
+				</td>
+				<td>
+					作業中に、不安感、落胆、いらいら、ストレス、悩みをどの程度感じましたか。あるいは逆に、安心感、満足感、充足感、楽しさ、リラックスをどの程度感じましたか。
+				</td>
+			</tr>
+		</table>
+		<br>
+		<input type="button" value="次へ>>>" onclick="clicked1()">
+	</div>
+	<div id="div2" style="display: none;">
+		<h1>タスクアンケート</h1>
+		どちらがより作業負荷に直結した要因か選んでください。
+		<br>
+		<table style="width: 30cm;">
+			<tr style="height: 4cm;">
+				<td style="width: 12cm; text-align: center;"><input type="button" value="" id="pair1" onclick="buttonPair1()"></td>
+				<td id="pair1_def"></td>
+			</tr>
+			<tr><td style="text-align: center;">or</td><td></td></tr>
+			<tr style="height: 4cm;">
+				<td style="width: 12cm; text-align: center;"><input type="button" value="" id="pair2" onclick="buttonPair2()"></td>
+				<td id="pair2_def"></td>
+			</tr>
+		</table>
+	</div>
+	<div id="div3" style="display: none;">
+		<h1>タスクアンケート</h1>
+		結果
+		<br>
+	</div>
+</body>
+</html>
