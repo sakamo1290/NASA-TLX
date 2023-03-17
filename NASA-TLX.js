@@ -66,7 +66,7 @@ let results_overall;
 let pair_num = 0;
 
 function clicked1() {
-	alert("次に15の質問をします。それぞれで、どちらがより作業負荷に直結した要因か選んでください。");
+	//alert("次に15の質問をします。それぞれで、どちらがより作業負荷に直結した要因か選んでください。");
 	results_rating[0] = Math.floor(document.getElementById("mental").value / 5) * 5;
 	results_rating[1] = Math.floor(document.getElementById("physical").value / 5) * 5;
 	results_rating[2] = Math.floor(document.getElementById("temporal").value / 5) * 5;
