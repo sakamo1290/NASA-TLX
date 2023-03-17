@@ -176,7 +176,7 @@ function getResultsHTML()
 
 	result += "</table>";
 	result += "<br/>";
-	result += "総合 = ";
+	result += "総合スコア = ";
 	result += results_overall;
 	result += "<br/>";
 
