@@ -36,9 +36,7 @@ right[5]  = "高い";
 def[5]    = "作業中に、不安感、落胆、いらいら、ストレス、悩みをどの程度感じましたか。あるいは逆に、安心感、満足感、充足感、楽しさ、リラックスをどの程度感じましたか。";
 
 window.addEventListener('load', OnLoad);
-function OnLoad() {
-	alert("ロードしました。");
-}
+function OnLoad() {}
 
 // Pairs of factors in order in the original instructions, numbers
 // refer to the index in the scale, left, right, def arrays.
