@@ -8,32 +8,32 @@ var NUM_SCALES = 6;
 scale[0]  = "知的・知覚的要求"; 
 left[0]   = "小さい";
 right[0]  = "大きい";
-def[0]    = "どの程度の知的・知覚的活動(考える、決める、計算する、記憶する、見るなど)を必要としましたか。<br>課題はやさしかったですか。それとも難しかったですか。<br>単純でしたか。それとも複雑でしたか。<br>正確さが求められましたか。それとも大ざっぱでよかったですか。";
+def[0]    = "<p>どの程度の知的・知覚的活動(考える、決める、計算する、記憶する、見るなど)を必要としましたか。<br>課題はやさしかったですか。それとも難しかったですか。<br>単純でしたか。それとも複雑でしたか。<br>正確さが求められましたか。それとも大ざっぱでよかったですか。</p>";
 
 scale[1]  = "身体的要求"; 
 left[1]   = "小さい";
 right[1]  = "大きい";
-def[1]    = "どの程度の身体的活動(押す、引く、回す、制御する、動き回るなど)を必要としましたか。<br>作業はラクでしたか。それともキツかったですか。<br>ゆっくりできましたか。それともキビキビやらなければなりませんでしたか。<br>休み休みできましたか。それとも働きづめでしたか。";
+def[1]    = "<p>どの程度の身体的活動(押す、引く、回す、制御する、動き回るなど)を必要としましたか。<br>作業はラクでしたか。それともキツかったですか。<br>ゆっくりできましたか。それともキビキビやらなければなりませんでしたか。<br>休み休みできましたか。それとも働きづめでしたか。</p>";
 
 scale[2]  = "タイムプレッシャー"; 
 left[2]   = "弱い";
 right[2]  = "強い";
-def[2]    = "仕事のペースや課題が発生する頻度のために感じる時間的切迫感はどの程度でしたか。<br>ペースはゆっくりとして余裕があるものでしたか。それとも速くて余裕のないものでしたか。";
+def[2]    = "<p>仕事のペースや課題が発生する頻度のために感じる時間的切迫感はどの程度でしたか。<br>ペースはゆっくりとして余裕があるものでしたか。それとも速くて余裕のないものでしたか。</p>";
 
 scale[3]  = "作業成績"; 
 left[3]   = "良い";
 right[3]  = "悪い";
-def[3]    = "作業指示者によって設定された課題の目標をどの程度達成できたと思いますか。<br>目標の達成に関して自分の作業成績にどの程度満足していますか。";
+def[3]    = "<p>作業指示者によって設定された課題の目標をどの程度達成できたと思いますか。<br>目標の達成に関して自分の作業成績にどの程度満足していますか。</p>";
 
 scale[4]  = "努力"; 
 left[4]   = "少ない";
 right[4]  = "多い";
-def[4]    = "作業成績のレベルを達成・維持するために、精神的・身体的にどの程度一生懸命に作業しなければなりませんでしたか。";
+def[4]    = "<p>作業成績のレベルを達成・維持するために、精神的・身体的にどの程度一生懸命に作業しなければなりませんでしたか。</p>";
 
 scale[5]  = "フラストレーション"; 
 left[5]   = "低い";
 right[5]  = "高い";
-def[5]    = "作業中に、不安感、落胆、いらいら、ストレス、悩みをどの程度感じましたか。あるいは逆に、安心感、満足感、充足感、楽しさ、リラックスをどの程度感じましたか。";
+def[5]    = "<p>作業中に、不安感、落胆、いらいら、ストレス、悩みをどの程度感じましたか。あるいは逆に、安心感、満足感、充足感、楽しさ、リラックスをどの程度感じましたか。</p>";
 
 window.addEventListener('load', OnLoad);
 function OnLoad() {}
@@ -64,6 +64,8 @@ for (let i = 0; i < NUM_SCALES; i++) results_tally[i] = 0;
 let results_weight = new Array();
 let results_overall;
 let pair_num = 0;
+
+
 
 function clicked1() {
 	//alert("次に15の質問をします。それぞれで、どちらがより作業負荷に直結した要因か選んでください。");
@@ -125,7 +127,26 @@ function nextPair()
 		document.getElementById('div2').style.display = 'none';
 		document.getElementById('div3').style.display = '';
 		calcResults();
-		document.getElementById('div3').insertAdjacentHTML("beforeend", getResultsHTML());
+        console.log(getResultsHTML())
+        const scoredata = getResultsHTML();
+		document.getElementById('score').value=scoredata;
+        //const scorearea = document.getElementById('score');
+        const button = document.getElementById('copybutton');
+
+        button.addEventListener('click', () => {
+          if (!navigator.clipboard) {
+            alert("このブラウザは対応していません");
+            return;
+          }
+
+          navigator.clipboard.writeText(scoredata).then(
+            () => {
+              alert('文章をコピーしました。');
+            },
+            () => {
+              alert('コピーに失敗しました。');
+            });
+        });
 	}
 	else
 	{
@@ -149,36 +170,28 @@ function calcResults()
 function getResultsHTML()
 {
 	var result = "";
-
-	result += "<table><tr><td></td><td>評価</td><td>計</td><td>重み</td></tr>";
 	for (var i = 0; i < NUM_SCALES; i++)
 	{
-		result += "<tr>";
-
-		result += "<td>";
+		result += "\n";
 		result += scale[i];
-		result += "</td>";
+		result += ",";
 
-		result += "<td>";
+
 		result += results_rating[i];
-		result += "</td>";
+		result += ",";
 
-		result += "<td>";
 		result += results_tally[i];
-		result += "</td>";
+		result += ",";
 
-		result += "<td>";
+		result += "";
 		result += results_weight[i];
-		result += "</td>";
-
-		result += "</tr>";
+		result += ",";
 	}
 
-	result += "</table>";
-	result += "<br/>";
-	result += "総合スコア = ";
+	result += "\n";
+	result += "総合スコア,";
 	result += results_overall;
-	result += "<br/>";
+	result += ",";
 
 	return result;
 }
